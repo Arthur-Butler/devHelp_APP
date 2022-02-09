@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginActivity">
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.younglings.devhelp.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login">
+        <action
+            android:id="@+id/loginActivity_to_itemFragment2"
+            app:destination="@id/itemFragment2" />
+    </activity>
+    <fragment
+        android:id="@+id/itemFragment2"
+        android:name="com.younglings.devhelp.ItemFragment2"
+        android:label="devhelp_explore_page"
+        tools:layout="@layout/devhelp_explore_page" />
+</navigation>

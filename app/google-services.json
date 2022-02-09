@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "344316994857",
+    "project_id": "devhelpdb",
+    "storage_bucket": "devhelpdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344316994857:android:10c8deeb1e7d66e1f3c338",
+        "android_client_info": {
+          "package_name": "com.younglings.devhelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344316994857-1q8a5acmh92henah1cp37as5b53rildp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAccZfnQhvY9thA8zkQMQOT4ENDth63Nc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344316994857-1q8a5acmh92henah1cp37as5b53rildp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
