@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&family=Poppins:wght@200;300&display=swap');
+
+:root{
+    --lg-font: 'Oswald', sans-serif;
+    --sm-font: 'Poppins', sans-serif;
+    --blueish: #9b0000;
+}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+
+body{
+    font-family: var(--sm-font);
+    font-weight: 300 !important;
+}
+
+.bg-primary{
+    background-color: var(--blueish) !important;
+}
+
+/* .navbar{
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+} */
+
+.navbar-brand img{
+   width: 50px;
+}
+
+.nav-link:hover{
+    color: #9b0000 !important;
+    font-weight: bolder !important;
+}
+
+.nav-item .nav-link{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navbar .nav-item .nav-link::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: all 0.5s ease;
+    transform: scale(0);
+}
+
+.navbar .nav-item .nav-link:hover::before{
+    transform: scale(1);
+}
+
+/*  */
+#header{
+    background:  linear-gradient(to right, #9b00003d 0%, #9b000063 100%),url(/images/hero.jpg) top/cover no-repeat;
+}
+
+.btns:not(.nav-btns button){
+    text-decoration: none;
+    background-color: #fff;
+    font-weight: normal;
+    color: black;
+    padding: 10px 28px;
+    border-radius: 5px;
+    border: solid black;
+}
+
+.btns:not(.nav-btns button):hover{
+    background-color: var(--blueish);
+    border: none;
+    color: white;
+}
+
+.heading{
+    font-family: var(--lg-font) !important;
+    font-size: 100px !important;
+    color: var(--blueish) !important;
+}
