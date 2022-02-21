@@ -1,3 +1,51 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyCPWcauJpBREVKVRn3BmQbNaDaCp0J_eao",
+    authDomain: "portfolio-contactform-fb210.firebaseapp.com",
+    projectId: "portfolio-contactform-fb210",
+    storageBucket: "portfolio-contactform-fb210.appspot.com",
+    messagingSenderId: "998740486486",
+    appId: "1:998740486486:web:d68cba2791851afc338ef7"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+//   Referencing my collection
+  let Information = firebase.database().ref("devHelp-New Email");
+
+
+
+  document.querySelector(".contact-form").addEventListener("submit", submitForm);
+  
+
+  function submitForm(e) {
+      e.preventDefault();
+      
+      let name = document.querySelector(".name").value;
+      let email = document.querySelector(".email").value;
+      let subject = document.querySelector(".subject").value;
+      let message = document.querySelector(".message").value;
+
+      saveInfomation(name, email, subject, message);
+      
+  }
+
+  //Saving the information 
+  function saveInfomation(name, email, subject, message){
+      let Info = Information.push();
+
+      Info.set({
+          Name: name,
+          email: email,
+          subject: subject,
+          message: message,
+
+      });
+
+      window.alert("We got your mail, we'll get back to you")
+      
+  }
+
 
 $('.features-car').owlCarousel({
     loop:true,
@@ -33,3 +81,9 @@ $('.ui-display-car').owlCarousel({
         }
     }
 })
+
+// Contact Form
+    var contactInfo = firebase('firebase/app');
+    var contactInfo = firebase.database().ref("infos");
+
+// -----------------------------------------------------------------------------
