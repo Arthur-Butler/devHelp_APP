@@ -1,3 +1,4 @@
+// ======================================Firebase JS=======================================================
 var firebaseConfig = {
     apiKey: "AIzaSyCPWcauJpBREVKVRn3BmQbNaDaCp0J_eao",
     authDomain: "portfolio-contactform-fb210.firebaseapp.com",
@@ -42,10 +43,11 @@ var firebaseConfig = {
 
       });
 
-      window.alert("We got your mail, we'll get back to you")
+      window.alert("We got your mail, hold tight while we get back to you")
       
   }
-
+// ======================================Firebase JS=======================================================
+// ===========================Carousel JS==================================================================
 
 $('.features-car').owlCarousel({
     loop:true,
@@ -81,9 +83,4 @@ $('.ui-display-car').owlCarousel({
         }
     }
 })
-
-// Contact Form
-    var contactInfo = firebase('firebase/app');
-    var contactInfo = firebase.database().ref("infos");
-
-// -----------------------------------------------------------------------------
+// ===========================Carousel JS===================================================
