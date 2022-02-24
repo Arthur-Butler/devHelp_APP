@@ -24,4 +24,45 @@
     <string name="sign_up_using_email_and_password">Sign Up using Email and Password</string>
     <string name="best_way_to_invest_your_money">Best way to invest Your Money!</string>
     <string name="or">Or</string>
+    <string name="explore_items">JOB POST:</string>
+    <string name="navigation_drawer_open">OPEN</string>
+    <string name="navigation_drawer_close">CLOSE</string>
+    <string name="for_all">CLOSE</string>
+    <string name="sign_out">Sign Out Button</string>
+    <string name="add_post">ADD DEV LISTING</string>
+    <string name="profile_name">FULL NAME</string>
+    <string name="profile_email">EMAIL ADDRESS</string>
+    <string-array name="field_array">
+        <item>BACK-END DEVELOPER</item>
+        <item>FRONT-END DEVELOPER</item>
+        <item>GRAPHIC DESIGNER</item>
+        <item>FULL-STACK DEVELOPER</item>
+        <item>DATA ANALYST</item>
+        <item>DATABASE ADMINISTRATOR</item>
+        <item>TESTER</item>
+        <item>MOBILE DEVELOPER</item>
+        <item>WEB DEVELOPER</item>
+        <item>UI/UX DEVELOPER</item>
+    </string-array>
+    <string-array name="lang_array">
+        <item>Python</item>
+        <item>C#</item>
+        <item>EXPRESS JS</item>
+        <item>REACT JS</item>
+        <item>NODE JS</item>
+        <item>JAVA</item>
+        <item>PHP</item>
+        <item>DART</item>
+        <item>FLUTTER</item>
+        <item>SQL</item>
+        <item>DELPHI</item>
+        <item>KOTLIN</item>
+        <item>C++</item>
+        <item>C</item>
+        <item>SAAS</item>
+        <item>DJANGO</item>
+        <item>MACHINE LEARNING</item>
+        <item>MATPLOTLIB PY</item>
+    </string-array>
+
 </resources>

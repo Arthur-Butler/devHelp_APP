@@ -16,7 +16,7 @@ import com.younglings.devhelp.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     FirebaseAuth mAuth;
     FirebaseUser currentUser ;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void userData() {
-        CircleImageView userImage = findViewById(R.id.imageView3);
+        CircleImageView userImage = findViewById(R.id.regUserPhoto);
         TextView userName = findViewById(R.id.username);
 
         userName.setText(currentUser.getDisplayName());
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+        Intent intent = new Intent(getApplicationContext(),FirstActivity.class);
         startActivity(intent);
         finish();
     }

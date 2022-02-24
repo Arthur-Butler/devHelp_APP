@@ -4,12 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.younglings.devhelp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userMail,userPassword;
     private Button btnLogin;
     private ProgressBar loginProgress;
-    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
     private Intent HomeActivity;
     private TextView logToRegBtn;
 
@@ -45,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         userPassword = findViewById(R.id.password);
         btnLogin = findViewById(R.id.login);
         loginProgress = findViewById(R.id.loading);
-        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         HomeActivity = new Intent(this, MainActivity.class);
 
 
@@ -79,25 +84,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private void signIn(String mail, String password) {
 
-        mAuth.signInWithEmailAndPassword(mail,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mDatabase.child("Users").child(mail).child(password).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-
-                if (task.isSuccessful()) {
-
-                    loginProgress.setVisibility(View.INVISIBLE);
-                    btnLogin.setVisibility(View.VISIBLE);
-                    updateUI();
-
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    Log.e("firebase", "Error getting data", task.getException());
+                    showMessage("Password or Username incorrect");
                 }
                 else {
-                    showMessage(task.getException().getMessage());
-                    btnLogin.setVisibility(View.VISIBLE);
-                    loginProgress.setVisibility(View.INVISIBLE);
+                    Log.d("firebase", String.valueOf(task.getResult().getValue()));
+                    Intent intent = new Intent(getApplicationContext(), Explore.class);
+                    startActivity(intent);
                 }
-
-
             }
         });
     }
@@ -111,14 +109,6 @@ public class LoginActivity extends AppCompatActivity {
     private void showMessage(String text) {
         Toast.makeText(getApplicationContext(),text, Toast.LENGTH_LONG).show();
     }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
 
-        if(user != null) {
-            //user is already connected  so we need to redirect him to home page
-            updateUI();
-        }
-    }
+
 }

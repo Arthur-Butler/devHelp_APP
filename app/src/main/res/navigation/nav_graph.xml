@@ -18,14 +18,24 @@
         android:id="@+id/itemFragment2"
         android:name="com.younglings.devhelp.ItemFragment2"
         android:label="devhelp_explore_page"
-        tools:layout="@layout/devhelp_explore_page" />
+        tools:layout="@layout/devhelp_explore_page" >
+        <action
+            android:id="@+id/action_itemFragment2_to_user_profile"
+            app:destination="@id/user_profile" />
+    </fragment>
     <fragment
         android:id="@+id/activity_email_and_password_register"
         android:name="com.younglings.devhelp.ui.login.activity_email_and_password_register"
         android:label="fragment_activity_email_and_password_register"
         tools:layout="@layout/fragment_activity_email_and_password_register" >
         <action
-            android:id="@+id/action_activity_email_and_password_register_to_loginActivity"
+            android:id="@+id/action_activity_email_and_password_register_to_loginActivity2"
             app:destination="@id/loginActivity" />
     </fragment>
+    <activity
+        android:id="@+id/user_profile"
+        android:name="com.younglings.devhelp.ui.login.ProfileActivity"
+        android:label="profile_page"
+        tools:layout="@layout/user_profile" >
+    </activity>
 </navigation>
