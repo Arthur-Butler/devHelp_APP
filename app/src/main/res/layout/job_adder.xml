@@ -11,22 +11,29 @@
         android:background="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/listProfiler"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+
+        <ImageView
+            android:id="@+id/listProfiler"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:focusable="true"
-            android:src="@drawable/avatarr" />
-        <!--android:onClick=""/>-->
+            android:src="@drawable/avatarr"
+            android:clickable="true"
+            android:onClick="viewProfile" />
         <Button
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="300dp"
+            android:layout_marginLeft="210dp"
             android:background="@drawable/log_out"
             android:clickable="true"
             android:contentDescription="@string/sign_out"
@@ -100,7 +107,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select type of main coding languages" />
+            android:text="Select project's main coding languages" />
 
         <Spinner
             android:id="@+id/spinnerLangAdd"

@@ -172,12 +172,18 @@ public class Explore extends AppCompatActivity {
         });
     }
 
+    public void viewProfile(){
+        Intent intent = new Intent(getApplicationContext(), LoggedInUserView.class);
+        startActivity(intent);
+    }
+
     public void viewJob(){
         setContentView(R.layout.job_viewer);
     };
 
     public void addJob(View view) {
-        setContentView(R.layout.job_adder);
+        Intent intent = new Intent(getApplicationContext(), JobAdder.class);
+        startActivity(intent);
     }
 
     public void writeNewJob() {

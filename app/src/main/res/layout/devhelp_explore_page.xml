@@ -27,10 +27,13 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/profileimage2"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/avatarr" />
+            android:src="@drawable/avatarr"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="viewProfile"/>
 
         <Button
             android:layout_width="50dp"

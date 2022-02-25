@@ -35,6 +35,9 @@
         <activity
             android:name=".ui.login.ProfileActivity"
             android:screenOrientation="sensor"/>
+        <activity
+            android:name=".ui.login.Pop"
+            android:theme="@style/AppTheme.CustomTheme"/>
     </application>
 
 </manifest>

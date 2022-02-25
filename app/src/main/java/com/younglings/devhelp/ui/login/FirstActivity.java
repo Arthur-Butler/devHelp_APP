@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import com.younglings.devhelp.ui.login.models.User;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.younglings.devhelp.R;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import androidx.annotation.NonNull;
+import java.util.ArrayList;
 
 public class FirstActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -72,6 +74,8 @@ public class FirstActivity extends AppCompatActivity {
                         Log.d("firebase","Password or Username Correct");
                         Intent intent = new Intent(getApplicationContext(), Explore.class);
                         startActivity(intent);
+                        User sum = new User(userMail.getText().toString(),userPassword.getText().toString());
+                        ArrayList<User> list = new ArrayList<>();
                     }
 
                 }
